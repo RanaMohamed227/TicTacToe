@@ -16,7 +16,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up Qt
+    - name: Set up Qt and CMake
       uses: jurplel/install-qt-action@v3
       with:
         version: '6.7.0'  # Adjust to your Qt version
@@ -29,12 +29,12 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y build-essential libgl1-mesa-dev
 
-    - name: Build project
+    - name: Configure and build project with CMake
       run: |
         mkdir -p build
         cd build
-        /path/to/Qt/6.7.0/gcc_64/bin/qmake ../  # Adjust path to qmake
-        make VERBOSE=1
+        cmake -DCMAKE_PREFIX_PATH=${{ runner.workspace }}/Qt ..
+        cmake --build . --config Release
 
     - name: Run tests (optional)
       run: |
@@ -60,4 +60,3 @@ jobs:
         name: tic-tac-toe-build
 
     # Add deployment steps as per your specific deployment needs (e.g., SCP, SSH)
-
