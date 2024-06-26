@@ -6,12 +6,14 @@ support both player-vs-player and player-vs-AI modes, allowing users to log in, 
 history, and analyze past games. The project will employ best practices in software 
 engineering, including secure user management, rigorous testing, and professional version 
 control workflows. 
+
 Objectives: 
 ● Create an interactive Tic Tac Toe game using C++, implementing a user-friendly GUI. 
 ● Incorporate user authentication to manage individual player profiles and game histories. 
 ● Develop a challenging AI opponent using strategic algorithms to enhance gameplay. 
 ● Employ unit and integration testing to ensure software quality and reliability. 
 ● Integrate CI/CD practices using GitHub for continuous integration and deployment. 
+
 Core Components: 
 Game Logic Implementation: 
 ● Develop the basic game mechanics allowing two players and a player and AI to 
